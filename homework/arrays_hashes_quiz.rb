@@ -8,12 +8,14 @@ lines = ['St Enoch', 'Buchanan St', 'Cowcaddens', 'St Georges X', 'Kelvinbridge'
 # puts lines[2]
 # 3. How many ways can we return 'St Enoch' from the array?
 # lines[-13] lines[0] lines.first
+# lines.take(1) lines.shift()
 # 4. Work out the index position of 'Partick'
 # lines.index("Partick")
 # 5. Add 'Bridge St' to the start of the array
 # lines.unshift('Bridge Street')
 # 6. Add 'West St' to the end of the array
 # lines.push("West St")
+# lines << "West St"
 # 7. Remove 'Kelvinbridge' from the array using it's name
 # lines.delete('Kelvinbridge')
 # 8. Delete 'Cessnock' from the array by index
@@ -23,6 +25,12 @@ lines = ['St Enoch', 'Buchanan St', 'Cowcaddens', 'St Georges X', 'Kelvinbridge'
 # 10. Print out all the stops using a for loop
 # for stations in lines
 #   puts stations
+# end
+
+# counter = 0
+# while counter < lines.size()
+#   puts line[counter]
+#   counter += 1
 # end
 ### B. Given the following data structure:
 
@@ -36,8 +44,12 @@ my_hash = {"0" => "Zero", 1 => "One", :two => "Two", "two" => 2}
 # my_hash["two"]
 # 4. How would you add `{3 => "Three"}` to the hash?
 # my_hash[3] = "Three"
+# my_hash.store(3, "Three")
+# my_hash.merge({3 => "Three"})
 # 5. How would you add `{:four => 4}` to the hash?
 # my_hash[:four] = 4
+# my_hash.store(:four, 4)
+# my_hash.merge({:four => 4})
 ### C. Given the following data structure:
 
 users = {
@@ -82,11 +94,17 @@ users = {
 # users["Avril"][:pets]["colin"]
 # 5. Return the smallest of Erik's favorite numbers
 # users["Erik"][:favourite_numbers].first
+# users["Erik"][:favourite_numbers].min()
+# users["Erik"][:favourite_numbers].sort().first()
 # 6. Add the number `7` to Erik's favorite numbers
 # users["Erik"][:favourite_numbers].push(7)
+# users["Erik"][:favourite_numbers].unshift(7)
+# users["Erik"][:favourite_numbers] << 7
+# users["Erik"][:favourite_numbers].insert(0,7)
 # 7. Change Erik's hometown to Edinburgh
 # users["Erik"][:home_town] = "Edinburgh"
 # 8. Add a pet dog to Erik called "Fluffy"
 # users["Erik"][:pets]["Fluffy"] = :dog
+# users["Erik"][:pets].store("Fluffy", :dog)
 # 9. Add yourself to the users hash
 # users["Sam"] = {:twitter => "sjd42", :favourite_numbers => [4, 8 , 22, 84], :home_town => "Duffus", :pets => {"Bertie" => :dog}}
